@@ -1,20 +1,25 @@
 import { Link, router } from "expo-router";
 import React from "react";
-import { Pressable, Text, View } from "react-native";
+import { Pressable, Text } from "react-native";
+
+import PageWrapper from "@/common/PageWrapper";
 
 function Main() {
   return (
-    <View>
+    <PageWrapper>
       <Text>Welcome</Text>
       <Link href="/users/1">Users</Link>
       <Pressable
         onPress={() => {
-          router.push("/users/2");
+          router.push({
+            pathname: "/users/[id]",
+            params: { id: 2 },
+          });
         }}
       >
         <Text>User 2</Text>
       </Pressable>
-    </View>
+    </PageWrapper>
   );
 }
 

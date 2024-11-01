@@ -1,18 +1,21 @@
+import ReduxProvider from "@/store/Provider";
 import { Stack } from "expo-router";
 import React from "react";
 
 function RootLayout() {
   return (
-    <Stack
-      screenOptions={{
-        headerShown: true,
-        animation: "ios",
-        orientation: "portrait",
-      }}
-    >
-      <Stack.Screen name="index" />
-      <Stack.Screen name="users/[id]" />
-    </Stack>
+    <ReduxProvider>
+      <Stack
+        screenOptions={{
+          headerShown: false,
+          animation: "ios",
+          orientation: "portrait",
+        }}
+      >
+        <Stack.Screen name="index" />
+        <Stack.Screen name="users/[id]" />
+      </Stack>
+    </ReduxProvider>
   );
 }
 
