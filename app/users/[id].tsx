@@ -8,7 +8,7 @@ function UserById() {
 
   return (
     <PageWrapper>
-      <View>
+      <View className="w-full h-full bg-red-500">
         <Text>User Page {id}</Text>
       </View>
     </PageWrapper>
